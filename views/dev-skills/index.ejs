@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Iris's Developer Skills</h1>
+    <ul>
+      <% skills.forEach(function(ds) { %>
+        <li>
+          <%= ds.skill %>
+            - 
+          <%= ds.possess ? 'Mastered' : 'Lacking' %>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
