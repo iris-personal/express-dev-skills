@@ -27,8 +27,8 @@ module.exports = {
   }
   
   function create(devSkill) {
-    devSkills.id = Date.now() % 1000000;
-    devSkills.possess = false;
+    devSkill.id = Date.now() % 1000000;
+    devSkill.possess = false;
     devSkills.push(devSkill);
   }
   

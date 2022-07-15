@@ -3,6 +3,10 @@
 <h1>Skill #<%= devSkills.id %></h1>
 <h3><%= devSkills.skill %></h3>
 <h3>Skill Progress <%= devSkills.possess ? 'Mastered' : 'Lacking' %></h3>
-<a href="/dev-skills/<%= devSkills.id %>/delete">DELETE SKILL</a>
+<form action="/dev-skills/<%= devSkills.id %>?_method=DELETE"
+    method="POST"
+    class="delete-form">
+    <button type="submit">Delete This Skill</button>
+  </form>
 
 <%- include('../partials/footer') %>

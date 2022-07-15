@@ -4,10 +4,6 @@
     <ul>
       <% skills.forEach(function(devSkills) { %>
         <li>
-          <form action="/dev-skills/<%= devSkills.id %>?_method=DELETE"
-            class="delete-form" method="POST">
-            <button type="submit">X</button>
-          </form>
           <a href="/dev-skills/<%= devSkills.id %>"><%= devSkills.skill %></a>
             - 
           <%= devSkills.possess ? 'Mastered' : 'Lacking' %>
