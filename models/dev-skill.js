@@ -15,6 +15,7 @@ module.exports = {
     getOne,
     create,
     delete: deleteOne,
+    update
   };
   
   function getAll() {
@@ -34,6 +35,13 @@ module.exports = {
   
   function deleteOne(id) {
     id = parseInt(id);
-    const skillIdx = devSkills.findIndex((ds) => ds.id === id);
+    const skillIdx = devSkills.findIndex(skill => skill.id === id);
     devSkills.splice(skillIdx, 1);
+  }
+
+
+function update(id, updatedSkill) {
+    id = parseInt(id);
+    const skill = devSkills.find(skill => skill.id === id);
+    Object.assign(skill, updatedSkill);
   }
