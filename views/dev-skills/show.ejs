@@ -1,0 +1,8 @@
+<%- include('../partials/header') %>
+
+<h1>Skill #<%= devSkills.id %></h1>
+<h3><%= devSkills.skill %></h3>
+<h3>Skill Progress <%= devSkills.possess ? 'Mastered' : 'Lacking' %></h3>
+<a href="/dev-skills/<%= devSkills.id %>/delete">DELETE SKILL</a>
+
+<%- include('../partials/footer') %>

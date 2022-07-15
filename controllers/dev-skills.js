@@ -3,7 +3,9 @@ const Skill = require('../models/dev-skill');
 module.exports = {
   index,
   new: newSkill,
-  create
+  create,
+  show,
+  delete: deleteSkill
 }
 
 function index(req, res) {
@@ -17,11 +19,16 @@ function newSkill(req, res) {
   }
 
   function create(req, res) {
-    // The model is responsible for CRUD
-    console.log('req.body', req.body)
     Skill.create(req.body);
-    // If data is updated/added we need to redirect
-    // Where we redirect to, is entirely up to you
-    // what do want your app to do?
+    res.redirect('/dev-skills');
+  }
+
+  function show(req, res) {
+    res.render('dev-skills/show', { 
+        devSkills: Skill.getOne(req.params.id) });
+  }
+
+  function deleteSkill(req, res) {
+    Skill.delete(req.params.id);
     res.redirect('/dev-skills');
   }

@@ -2,11 +2,15 @@
 
     <h1>Iris' Developer Skills</h1>
     <ul>
-      <% skills.forEach(function(ds) { %>
+      <% skills.forEach(function(devSkills) { %>
         <li>
-          <%= ds.skill %>
+          <form action="/dev-skills/<%= devSkills.id %>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit">X</button>
+          </form>
+          <a href="/dev-skills/<%= devSkills.id %>"><%= devSkills.skill %></a>
             - 
-          <%= ds.possess ? 'Mastered' : 'Lacking' %>
+          <%= devSkills.possess ? 'Mastered' : 'Lacking' %>
         </li>
       <% }); %>
     </ul>
