@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Iris's Developer Skills</h1>
+<%- include('../partials/header') %>
+
+    <h1>Iris' Developer Skills</h1>
     <ul>
       <% skills.forEach(function(ds) { %>
         <li>
@@ -15,5 +10,5 @@
         </li>
       <% }); %>
     </ul>
-  </body>
-</html>
+
+<%- include('../partials/footer') %>
